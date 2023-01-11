@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const Schema = mongoose.Schema()
+const Schema = mongoose.Schema
 
 const flightSchema = new Schema({
   airline:String,
@@ -11,7 +11,7 @@ const flightSchema = new Schema({
   timestamps:true,
 })
 
-const Flight = mongoos.model('Flight', flightSchema)
+const Flight = mongoose.model('Flight', flightSchema)
 
 export{
   Flight,
