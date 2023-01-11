@@ -1,0 +1,7 @@
+<%- include('../partials/html-head') %> 
+<%- include('../partials/nav') %> 
+  <h1>Your Flight on:<%= flight.departs.toLocaleDateString() %> </h1>
+  <div>Airline: <%= flight.airline %> </div>
+  <div>Airport: <%= flight.airport %> </div>
+  <div>Leaves: <%= flight.departs %> </div>
+<%- include('../partials/footer') %> 
