@@ -48,14 +48,38 @@ function deleteFlight(req,res){
 function show(req,res){
   Flight.findById(req.params.id)
   .then(flight=>{
-    res.render('flights/show',{title:'detailed view',
-    flight,})
+    res.render('flights/show',{
+      title:'detailed view',
+      flight,
+    })
   })
   .catch(err=>{
     console.log(err)
     res.redirect('/flights')
   })
 }
+function edit(req,res){
+  Flight.findById(req.params.id)
+  .then(flight=>{
+    res.render('flights/edit',{
+    title:'update info for flight',
+    flight,
+    })
+  })
+}
+
+function update(req,res){
+  Flight.findByIdAndUpdate(req.params.id, req.body, {new:true})
+  .then(flight=>{
+    res.redirect(`/flights/${flight._id}`)
+  }
+  )
+  .catch(err=>{
+    console.log(err)
+    res.redirect('/flights')
+  })
+}
+
 
 export{
   newFlight as new,
@@ -63,4 +87,6 @@ export{
   index,
   deleteFlight as delete,
   show,
+  edit,
+  update,
 }

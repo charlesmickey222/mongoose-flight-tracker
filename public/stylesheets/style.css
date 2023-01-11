@@ -2,7 +2,24 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+h2{
+  color:black;
+  font-size:48px;
+}
 a {
   color: #00B7FF;
+  min-height:10px;
+  min-width: 10px;
+}
+nav{
+  font-size:24px;
+  float: right;
+}
+i{
+  height: 40px;
+  width:40px;
+  color: black;
+}
+th{
+  border-bottom: 2px black;
 }

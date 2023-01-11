@@ -5,27 +5,19 @@
       <table id="list">
         <thead>
           <tr>
-            <th>Airline</th>
+            <th>Departure Date</th>
             <th>Airport</th>
-            <th>Flight Number</th>
-            <th>Departure Info</th>
-            <th>delete flight</th>
+            <th>delete</th>
           </tr>
         </thead>
         <tbody>
           <% flights.forEach(flight=> { %>
             <tr>
-            <td>
-              <%= flight.airline %>
-            </td>
+              <td>
+                <%= flight.departs.toLocaleDateString() %>
+              </td>
             <td>
               <%= flight.airport %>
-            </td>
-            <td>
-              <%= flight.flightNum %>
-            </td>
-            <td>
-              <%= flight.departs.toLocaleString() %>
             </td>
             <td>
               <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
@@ -33,7 +25,7 @@
               </form>
             </td>
             <td>
-              <a href="/flights/<%=flight._id%>"> ... </a>
+              <a href="/flights/<%=flight._id%>"> show flight details </a>
             </td>
           </tr>
           <% }) %>
